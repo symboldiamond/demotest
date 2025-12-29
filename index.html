@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <p id="test">test</p>
+    <input type="text" id="input" >
+    <button id="btn">ENTER</button>
+    <audio src="Wrong.webm" id="playthis1"></audio>
+    <audio src="Notify.webm" id="playthis2"></audio>
+    <script>
+        const input = document.getElementById("input");
+        const output = document.getElementById("test");
+        const button = document.getElementById("btn");
+        const playthis = document.getElementById("playthis1")
+        
+        button.addEventListener("click", () => {
+            if (!playthis.paused){
+                playthis.pause();
+                playthis.currentTime = 0;
+            }
+            playthis.play();
+        })
+
+        function inputcheck() {
+            const val = input.value.trim().toLowerCase();
+
+            if (val === "hi" ){
+                output.textContent = "hello there";
+            }
+
+            else{
+                output.textContent = value;
+            }
+        }
+        button.addEventListener('click', inputcheck);
+        input.addEventListener("keydown", (event) => {
+            if (event.key === "z") {
+                inputcheck();
+            }
+        });
+    </script>
+</body>
+</html>
