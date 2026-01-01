@@ -15,25 +15,36 @@
         const input = document.getElementById("input");
         const output = document.getElementById("test");
         const button = document.getElementById("btn");
-        const playthis = document.getElementById("playthis1")
+        const playthis = document.getElementById("playthis1");
+        const playthist = document.getElementById("playthis2");
         
-        button.addEventListener("click", () => {
+        /*button.addEventListener("click", () => {
             if (!playthis.paused){
                 playthis.pause();
                 playthis.currentTime = 0;
             }
             playthis.play();
-        })
-
+        })*/
+        
         function inputcheck() {
             const val = input.value.trim().toLowerCase();
 
             if (val === "hi" ){
                 output.textContent = "hello there";
+                if (!playthist.paused){
+                playthist.pause()     
+                playthist.currentTime = 0;
+                }
+                playthist.play();
             }
 
-            else{
-                output.textContent = value;
+            else {
+
+                if (!playthis.paused){
+                playthis.pause();
+                playthis.currentTime = 0;
+            }
+            playthis.play();
             }
         }
         button.addEventListener('click', inputcheck);
